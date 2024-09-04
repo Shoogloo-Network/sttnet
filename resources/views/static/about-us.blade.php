@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@section('title', 'About Us')
-@section('meta-description', 'PO Ferries about us')
-@section('meta-keyword', 'PO Ferries')
+@section('title', 'Find out more about Split Train Tickets here')
+@section('meta-description', 'Split Train Tickets is dedicated to connecting people globally through trains, coaches, and ferries. Learn more here.')
+@section('meta-keyword', '')
 @section('content')
     <section class="section-gray fadeInUp animated">
         <div class="container herobanner">

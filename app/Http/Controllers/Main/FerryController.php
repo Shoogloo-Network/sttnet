@@ -9,6 +9,7 @@ use App\Models\Ferries;
 use App\Models\FerryDetail;
 use App\Models\FerryNavbar;
 use App\Models\Navbar;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class FerryController extends Controller
@@ -46,7 +47,9 @@ class FerryController extends Controller
 
         $faqData = Faq::where(['page_id' => $pageId, 'slug' => $ferryData['slug'], 'status' => 'Yes'])->get();
 
- 	$dealsData = Deal::where(['domain_id'=>$_ENV['DOMAIN_ID'], 'page_id'=>$pageId, 'slug'=>$ferry, 'status' => 'Yes'])->orderBy('id', 'desc')->get();
+        $dealsData = Deal::where(['domain_id' => $_ENV['DOMAIN_ID'], 'page_id' => $pageId, 'slug' => $ferry, 'status' => 'Yes',])
+        ->where('expiry', '>=', Carbon::now())
+        ->orderBy('id', 'desc')->get();
 
         $pageDetail = FerryDetail::where(['ferry_id' => $ferryData['id'], 'domain_id' => $_ENV['DOMAIN_ID']])->firstOrFail();
 
