@@ -53,6 +53,7 @@
 
                                     @default
                                         @php
+                                            $urlpre = '';
                                             $prefix = '';
                                         @endphp
                                 @endswitch
@@ -115,6 +116,7 @@
 
                                     @default
                                         @php
+                                            $urlpre = '';
                                             $prefix = '';
                                         @endphp
                                 @endswitch

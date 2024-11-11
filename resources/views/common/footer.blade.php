@@ -27,14 +27,16 @@
                             $suffix = '';
                             $urlpre = '/train-companies/';
                             break;
- 			case 'Ferries':
+ 			            case 'Ferries':
                             $prefix = '';
                             $suffix = '';
                             $urlpre = '/ferries/';
                             break;
 
-                        default:
+                        default:                        
+                            $urlpre = '';
                             $prefix = '';
+                            $suffix = '';
                     }
                     ?>
                     @foreach ($nav['children'] as $subnav)
