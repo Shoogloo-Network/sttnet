@@ -31,7 +31,11 @@ gtag('event', 'conversion', {'send_to': 'AW-11222895509/4fNvCJPYsawYEJWXv-cp'});
 <?php }elseif(!empty($pageDetail)){ ?>
 <title>{{ $pageDetail['metatitle'] }}</title>
 <meta name="description" content="{{ $pageDetail['metadescription'] }}" />
-<meta name="keywords" content="{{ $pageDetail['metakeyword'] }}" />
+<meta name="keywords" content="{{ $pageDetail['metakeyword'] }}" /><?php } else {
+?>
+    <title>@yield('title', 'Default Title')</title>
+    <meta name="description" content="@yield('meta-description', 'Default Description')">
+    <meta name="keywords" content="@yield('meta-keyword', '')">
 <?php } ?>
 <!-- Fonts -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">

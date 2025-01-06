@@ -10,6 +10,9 @@ class Deal extends Model
     use HasFactory;
     protected $table = 'deals';
     protected $fillable = [
+        'domain_id',
+        'page_id',
+        'slug',
         'title',
         'discount',
         'discount_type',
