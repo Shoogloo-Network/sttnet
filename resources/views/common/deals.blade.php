@@ -14,7 +14,7 @@
                         </div>
                         <div class="coupon-col-1-4">
                             <div class="coupon-code">
-                                <a href="{{ url($dealRow->dealurl != null ? $dealRow->dealurl : 'https://book.splittraintickets.net/' ) }}" rel="nofollow" class="coupon-btn"
+                                <a href="{{ url($dealRow->dealurl != null ? $dealRow->dealurl : $pageDetail->merchant_link ) }}" rel="nofollow" class="coupon-btn"
                                     title="Click Here To Get This Deal" target="_blank">
                                     <span class="coupon_deal_icon">
                                         <img class="" src="{{ url('/assets/images/sttimg') }}/deal-24.png"

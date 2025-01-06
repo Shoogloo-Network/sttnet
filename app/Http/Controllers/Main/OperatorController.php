@@ -47,7 +47,7 @@ class OperatorController extends Controller
         $popularData = Popular::getPopularRoutes($pageId, $otaData['id']);
         $pageDetail = OperatorDetail::where(['operator_id' => $otaData['id'], 'domain_id' => $_ENV['DOMAIN_ID']])->firstOrFail();
         $dealsData = Deal::where(['domain_id' => $_ENV['DOMAIN_ID'], 'page_id' => $pageId, 'slug' => $ota, 'status' => 'Yes'])->orderBy('id', 'desc')->get();
-
+        //dd($dealsData);
         return view('operator.detail', [
             'result' => $nestedNavbars,
             'otaData' => $otaData,
