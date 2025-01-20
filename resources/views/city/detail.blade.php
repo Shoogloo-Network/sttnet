@@ -6,11 +6,13 @@
             <h1 class="heading mb-4">Save Big with Split Train Tickets to {{ $pageData->name }} | Times, Routes and Attractions </h1>
             <div class="row">
                 <div class="col-md-12 tracking">
-                    <a href="https://www.splitsaving.co.uk/" target="_blank">
-                        <img max-width:"100%" height="auto" src="/assets/images/sttimg/{{ $pageDetail[0]->banner }}"
-                            class="vc_single_image-img attachment-full"
-                            alt="Split Train Tickets to London">
-                    </a>
+					<div class="tracking-imgbox">
+						<a href="https://www.splitsaving.co.uk/" target="_blank">
+							<img max-width:"100%" height="auto" src="/assets/images/sttimg/{{ $pageDetail[0]->banner }}"
+								class="vc_single_image-img attachment-full"
+								alt="Split Train Tickets to London">
+						</a>
+					</div>
 		    <div class="slide-read-more"> {!! $pageDetail[0]->description !!} </div>
 		    <div class="slide-read-more-button read-more-button">Read More</div>
 		    <div class="slide-read-more-button">Read Less</div>
