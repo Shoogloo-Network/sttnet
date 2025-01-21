@@ -8,7 +8,7 @@
                 <div class="col-md-12 tracking">
 					<div class="tracking-imgbox">
 						<a href="https://www.splitsaving.co.uk/" target="_blank">
-							<img max-width:"100%" height="auto" src="/assets/images/sttimg/{{ $pageDetail[0]->banner }}"
+							<img max-width="100%" height="auto" src="{{ asset('/assets/images/sttimg'. '/' . $pageDetail[0]->banner) }}"
 								class="vc_single_image-img attachment-full"
 								alt="Split Train Tickets to London">
 						</a>
