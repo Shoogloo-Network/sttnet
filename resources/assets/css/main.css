@@ -879,9 +879,24 @@ footer .fab {
     display: none;
 }
 
+.tracking p {
+    text-align: justify;
+	margin-top:15px;
+}
+
 .tracking-imgbox {
     text-align: center;
     display: block;
+}
+
+.tracking-imgbox a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.tracking-imgbox a img {
+    margin-bottom: 15px;
+    max-width: 100%;
 }
 
 @media screen and (min-width: 992px) {

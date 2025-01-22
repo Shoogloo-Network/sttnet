@@ -6,23 +6,23 @@
             <h1 class="heading mb-4">Save Big with Split Train Tickets to {{ $pageData->name }} | Times, Routes and Attractions </h1>
             <div class="row">
                 <div class="col-md-12 tracking">
-					<div class="tracking-imgbox">
-						<a href="https://www.splitsaving.co.uk/" target="_blank">
-							<img max-width="100%" height="auto" src="{{ asset('/assets/images/sttimg'. '/' . $pageDetail[0]->banner) }}"
-								class="vc_single_image-img attachment-full"
-								alt="Split Train Tickets to London">
-						</a>
-					</div>
-		    <div class="slide-read-more"> {!! $pageDetail[0]->description !!} </div>
+                    <div class="tracking-imgbox">
+                        <a href="https://www.splitsaving.co.uk/" target="_blank">
+                            <img height="347" src="/assets/images/sttimg/{{ $pageDetail->banner }}"
+                                class="vc_single_image-img attachment-full"
+                                alt="Split Train Tickets to London">
+                        </a>
+                    </div>
+		    <div class="slide-read-more" id="locateRM"> {!! $pageDetail->description !!} </div>
 		    <div class="slide-read-more-button read-more-button">Read More</div>
 		    <div class="slide-read-more-button">Read Less</div>
 
                     <!-- <div class="coupon-description">
                         <span class="full-description" id="ShowLess">
-                            <p> {!! substr($pageDetail[0]->description, 0, 1500 ) !!} <a class="readbox">... Read More</a></p>
+                            <p> {!! substr($pageDetail->description, 0, 1500 ) !!} <a class="readbox">... Read More</a></p>
                         </span>
                         <span class="full-description" id="ShowMore" style="display:none">
-                            <p> {!! $pageDetail[0]->description !!} <a class="readbox">Read Less</a></p>
+                            <p> {!! $pageDetail->description !!} <a class="readbox">Read Less</a></p>
                         </span>
                     </div>-->
 
@@ -70,7 +70,7 @@
                                         alt="{{ $companies->operator_name }}" height="370" width="370">
                                 </div>
                                 <div class="heading2">{{ $companies->operator_name }}</div>
-                                <div class="banner-txt">{!! $companies->operator_shdesc !!}</div>
+                                {!! $companies->operator_shdesc !!}
                                 <div class="view-box">
                                     <a class="view-btn" href="{{ url('train-companies/' .$companies->operator_slug. '.html') }}" title=" {{ $companies->operator_slug }} train tickets ">Read More</a>
                                 </div>

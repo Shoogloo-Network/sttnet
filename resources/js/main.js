@@ -181,32 +181,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 $(document).ready(function(){
-	// resize the slide-read-more Div
+	// Resize the slide-read-more Div
 	var box = $(".slide-read-more");
-	var minimumHeight = 520; // max height in pixels
+	var whome = $(".whome");
+	if(whome.length>0){
+	  var minimumHeight = 275; // max height in pixels
+	}else{
+	  var minimumHeight = 400;
+	}  
 	var initialHeight = box.innerHeight();
-	// reduce the text if it's longer than 200px
+  
+	// Reduce the text if it's longer than minimumHeight
 	if (initialHeight > minimumHeight) {
 		box.css('height', minimumHeight);
 		$(".read-more-button").show();
 	}
-
+  
 	SliderReadMore();
 	function SliderReadMore() {
 		$(".slide-read-more-button").on('click', function () {
-			// get current height
+			// Get current height
 			var currentHeight = box.innerHeight();
-			// get height with auto applied
+			// Get height with auto applied
 			var autoHeight = box.css('height', 'auto').innerHeight();
-			// reset height and revert to original if current and auto are equal
+			// Reset height and revert to original if current and auto are equal
 			var newHeight = (currentHeight | 0) === (autoHeight | 0) ? minimumHeight : autoHeight;
+  
 			box.css('height', currentHeight).animate({
-				height: (newHeight)
-			})
-			$('html, body').animate({
-				scrollTop: box.offset().top
+				height: newHeight
+			}, 500, function() {
+				// Check if the box is collapsing to the minimumHeight
+				if (newHeight === minimumHeight) {
+					// Focus on the specific div after collapsing
+					document.getElementById('locateRM').scrollIntoView({ behavior: 'smooth' });
+				}
 			});
 			$(".slide-read-more-button").toggle();
 		});
 	}
-});
+  });
