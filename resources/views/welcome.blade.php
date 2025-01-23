@@ -10,8 +10,8 @@
                         <div class="column-inner">
                             <div class="column-wrapper">
                                 <div class="banner-img">
-                                    <img src="{{ asset('assets/images/sttimg/' . $cities->banner) }}"
-                                        title="{{ $cities->name }}" alt="{{ $cities->name }}" width="80%" height="70%">
+                                    <img src="{{ asset('assets/images/sttimg/' . $cities->smallbanner) }}"
+                                        title="{{ $cities->name }}" width="80%" height="70%">
                                 </div>
                                 <div class="heading2">Split Ticketing to {{ $cities->name }}</div>
                                 <div class="banner-txt">{!! $cities->shortdesc !!}</div>
@@ -38,7 +38,7 @@
                             <div class="column-wrapper">
                                 <div class="banner-img">
                                     <img src="{{ asset('assets/images/sttimg/' . $routes->banner) }}"
-                                        title="{{ $routes->name }}" alt="{{ $routes->name }}" width="80%" height="70%">
+                                        title="{{ $routes->name }}" width="80%" height="70%">
                                 </div>
                                 <div class="heading2">{{ $routes->name }} Split Ticketing</div>
                                 <div class="banner-txt">{!! $routes->shortdesc !!}</div>
