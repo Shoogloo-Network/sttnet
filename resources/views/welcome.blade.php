@@ -37,7 +37,7 @@
                         <div class="column-inner">
                             <div class="column-wrapper">
                                 <div class="banner-img">
-                                    <img src="{{ asset('assets/images/sttimg/' . $routes->banner) }}"
+                                    <img src="{{ asset('assets/images/sttimg/' . $routes->logo) }}"
                                         title="{{ $routes->name }}" width="80%" height="70%">
                                 </div>
                                 <div class="heading2">{{ $routes->name }} Split Ticketing</div>
