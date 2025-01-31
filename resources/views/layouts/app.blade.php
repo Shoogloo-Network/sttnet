@@ -19,22 +19,19 @@
 <script>
 gtag('event', 'conversion', {'send_to': 'AW-11222895509/4fNvCJPYsawYEJWXv-cp'});
 </script>
-<meta name="msvalidate.01" content="09CFEFC47634C845C5E6EA5AFC270197" /> 
-<!-- Google tag (gtag.js) --> 
+<meta name="msvalidate.01" content="09CFEFC47634C845C5E6EA5AFC270197" />
+<meta name="lhverifycode" content="32dc01246faccb7f5b3cad5016dd5033" />
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BQDPRMNL8T"></script>
 <script> window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-BQDPRMNL8T'); </script>
 
-<?php if( !empty($pageDetail[0]) ){?>
-<title>{{ $pageDetail[0]->metatitle }}</title>
-<meta name="description" content="{{ $pageDetail[0]->metadescription }}" />
-<meta name="keywords" content="{{ $pageDetail[0]->metakeyword }}" />
-<?php }elseif(!empty($pageDetail)){ ?>
-<title>{{ $pageDetail['metatitle'] }}</title>
-<meta name="description" content="{{ $pageDetail['metadescription'] }}" />
-<meta name="keywords" content="{{ $pageDetail['metakeyword'] }}" /><?php } else {
-?>
-    <title>@yield('title', 'Default Title')</title>
-    <meta name="description" content="@yield('meta-description', 'Default Description')">
+<?php if(!empty($pageDetail)){ ?>
+    <title>{{ $pageDetail->metatitle }}</title>
+    <meta name="description" content="{{ $pageDetail->metadescription }}" />
+    <meta name="keywords" content="{{ $pageDetail->metakeyword }}" />
+<?php } else { ?>
+    <title>@yield('title', '')</title>
+    <meta name="description" content="@yield('meta-description', '')">
     <meta name="keywords" content="@yield('meta-keyword', '')">
 <?php } ?>
 <!-- Fonts -->
@@ -56,7 +53,7 @@ gtag('event', 'conversion', {'send_to': 'AW-11222895509/4fNvCJPYsawYEJWXv-cp'});
 <script>
 $('#stars li').on('mouseover', function(){
     var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
-   
+
     // Now highlight all the stars that's not after the current hovered star
     $(this).parent().children('li.star').each(function(e){
       if (e < onStar) {
@@ -66,7 +63,7 @@ $('#stars li').on('mouseover', function(){
         $(this).removeClass('hover');
       }
     });
-    
+
   }).on('mouseout', function(){
     $(this).parent().children('li.star').each(function(e){
       $(this).removeClass('hover');
@@ -76,15 +73,15 @@ $('#stars li').on('mouseover', function(){
 $('#stars li').on('click', function(){
     var onStar = parseInt($(this).data('value'), 10); // The star currently selected
     var stars = $(this).parent().children('li.star');
-    
+
     for (i = 0; i < stars.length; i++) {
       $(stars[i]).removeClass('selected');
     }
-    
+
     for (i = 0; i < onStar; i++) {
       $(stars[i]).addClass('selected');
     }
-    
+
     // JUST RESPONSE (Not needed)
     var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
     var msg = "";
@@ -95,13 +92,13 @@ $('#stars li').on('click', function(){
         msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
     }
 	$('#rating').val(ratingValue);
-    responseMessage(msg);    
-});  
+    responseMessage(msg);
+});
 
 
 function responseMessage(msg) {
-  $('.rating-box').hide();  
-  $('.success-box').show();  
+  $('.rating-box').hide();
+  $('.success-box').show();
   $('.success-box div.text-message').html(msg);
 }
 
